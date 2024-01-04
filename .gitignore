@@ -14,7 +14,9 @@ node_modules
 .sass-cache
 
 bin/
+*/bin/
 obj/
 Debug/
 Release/
 /build/
+.DS_store
