@@ -1,0 +1,73 @@
+minikube start
+
+kubectl config set-context --current --namespace=app
+
+kubectl  apply -f dp.yaml
+
+
+kubectl delete pod kuber-dp-f58574655-2cnz5
+kubectl delete pod kuber-dp-f58574655-9tz28
+kubectl delete pod kuber-dp-f58574655-kb4r7 
+
+kubectl delete svc kuber-service 
+
+kubectl  apply -f service.yaml
+kubectl  apply -f ingres.yaml
+
+kubectl  get ing
+
+kubectl delete all  --all -n ingress-nginx
+kubectl delete all  --all -n kuber-ingress 
+kuber-ingress 
+
+ingress-nginx-controller-admission
+
+curl http://192.168.49.2/health
+
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+Visit the Service via NodePort:
+minikube service kuber-service -n app --url
+http://127.0.0.1:49983
+
+
+NAME            CLASS   HOSTS           ADDRESS        PORTS   AGE
+kuber-ingress   nginx   arch.homework   192.168.49.2   80      13m
+
+curl --resolve "arch.homework:80/health:$(192.168.49.2)" -i http://arch.homework/health
+
+Смотрим переменные окружения
+homework3 % kubectl exec -it kuber-dp-f58574655-fbrbx -- /bin/bash
+ENV
+ls
+
+helm install demo-app ./demo-app
+helm history demo-app
+kubectl get deployment
+kubectl get deployment
+
+helm upgrade demo-app ./demo-app --dry-run
+helm upgrade demo-app ./demo-app 
+
+#####
+https://www.airplane.dev/blog/deploy-postgres-on-kubernetes
+
+kubectl  apply -f postgres_configmap.yaml
+kubectl get configmap
+
+kubectl  apply -f postgres-pvc-pv.yaml
+persistentvolume/postgres-pv-volume created
+persistentvolumeclaim/postgres-pv-claim created
+kubectl get pvc
+
+
+kubectl  apply -f deployment_database.yaml
+
+kubectl  apply -f service_database.yaml
+
+
+Connect to PostgreSQL
+###kubectl exec -it [pod-name] --  psql -h localhost -U admin --password -p 5432 postgresdb
+kubectl exec -it postgres-b88f99b6-6brxh --  psql -h localhost -U admin --password -p 5432 postgresdb
+
+
+kubectl create secret generic my-secret --from-literal=username=admin --from-literal=password=psltest

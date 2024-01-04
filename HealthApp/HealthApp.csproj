@@ -6,10 +6,27 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Core\" />
+    <None Remove="Infrastructure\" />
+    <None Remove="Application\" />
+    <None Remove="Core\Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Application\" />
+    <Folder Include="Core\Entities\" />
+  </ItemGroup>
 </Project>
