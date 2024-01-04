@@ -14,8 +14,11 @@ node_modules
 .sass-cache
 
 bin/
-*/bin/
+HealthApp/bin/
 obj/
+HealthApp/obj/
+HealthApp/Debug/
+HealthApp/Release/
 Debug/
 Release/
 /build/
