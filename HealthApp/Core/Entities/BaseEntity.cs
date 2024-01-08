@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace HealthApp.Core.Entities
 {
-	public class BaseEntity
-	{
-		public int Id { get; set; }
-	}
+    public interface IEntity<T>
+    {
+        public T Id { get; set; }
+    }
+
+    public abstract class BaseEntity<T> : IEntity<T>
+    {
+        public T Id { get; set; }
+    }
+
+    public abstract class BaseEntity : BaseEntity<int>
+    {
+    }
 }

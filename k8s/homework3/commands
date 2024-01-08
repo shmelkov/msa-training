@@ -71,3 +71,11 @@ kubectl exec -it postgres-b88f99b6-6brxh --  psql -h localhost -U admin --passwo
 
 
 kubectl create secret generic my-secret --from-literal=username=admin --from-literal=password=psltest
+
+kubectl  apply -f database-secret.yaml
+
+kubectl exec -it kuber-dp-6f8dc88c6f-fdpcf -- env
+kubectl exec -it postgres-7757758985-wnvrs -- env
+
+
+kuber-dp-6f8dc88c6f-fdpcf 

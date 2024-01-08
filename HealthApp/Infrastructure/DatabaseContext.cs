@@ -9,6 +9,7 @@ namespace Infrastructure.EntityFramework
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
+            
         }
         
         public DbSet<User> Users { get; set; }
@@ -24,7 +25,9 @@ namespace Infrastructure.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);   
+            
+            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+            
         }
     }
 }

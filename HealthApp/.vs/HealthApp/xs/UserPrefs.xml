@@ -1,14 +1,11 @@
-﻿<Properties StartupConfiguration="{BE61FBFA-6C08-49AB-80B4-C61D6FB8BA6F}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+﻿<Properties StartupConfiguration="{09FC6E87-E546-4411-81B5-B63D7F2089E2}|Default">
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.HealthApp PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core/IUsersDbContext.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Controllers/HealthController.cs" />
-      <File FileName="Program.cs" />
-      <File FileName="Core/Entities/User.cs" />
-      <File FileName="Core/IUsersDbContext.cs" Line="5" Column="37" />
-      <File FileName="Infrastructure/DatabaseContext.cs" />
-      <File FileName="Controllers/UserController.cs" Line="4" Column="38" />
+      <File FileName="Program.cs" Line="48" Column="45" />
+      <File FileName="Controllers/UserController.cs" Line="10" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,22 +13,17 @@
           <Node name="HealthApp">
             <Node name="HealthApp">
               <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Core" expanded="True">
-                <Node name="IUsersDbContext.cs" selected="True" />
-              </Node>
-              <Node name="Infrastructure" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

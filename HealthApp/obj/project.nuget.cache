@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p4HCDtCPlXXU0DNJFpGXT41oJKwz8zBnXFoIW0FKB/Sqy36S7EVchbty9Y13T9teHHZM8fnh/EPPruOGfNrWEw==",
+  "dgSpecHash": "87VgxjVC/ddiGqWjjiKcGoQOXp4mVRDY5E/WVDeMcL27V5uk+dJlcBvsnzb0MhENC/MrwSeXJbJhcuPr1VUZ9w==",
   "success": true,
   "projectFilePath": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj",
   "expectedPackageFiles": [
@@ -30,10 +30,13 @@
     "/Users/eshmelkov/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/eshmelkov/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/eshmelkov/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/eshmelkov/.nuget/packages/npgsql/7.0.0/npgsql.7.0.0.nupkg.sha512",
+    "/Users/eshmelkov/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.0/npgsql.entityframeworkcore.postgresql.7.0.0.nupkg.sha512",
     "/Users/eshmelkov/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/eshmelkov/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/eshmelkov/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "/Users/eshmelkov/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    "/Users/eshmelkov/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/Users/eshmelkov/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
