@@ -14,18 +14,26 @@ public class UserController : ControllerBase
     
     private readonly ILogger<UserController> _logger;
     private readonly IMediator _mediator;
-    
+
+    /*
     public UserController(ILogger<UserController> logger, IMediator mediator)
     {
-        _logger = logger;
-        _mediator = mediator;
+        //_logger = logger;
+        //_mediator = mediator;
+    }
+    */
+    public UserController()
+    {
+        //_logger = logger;
+        //_mediator = mediator;
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
-        var result = await _mediator.Send(new GetUserByIdQuery() { Id = id });
-        //var result = new GetUserByIdQuery() { Id = id };
+        //var result = await _mediator.Send(new GetUserByIdQuery() { Id = id });
+        var result = new GetUserByIdQuery() { Id = id };
+        //var result = "test";
 
         return Ok(result);
     }
@@ -34,9 +42,10 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateUserCommand request)
     {
-        await _mediator.Send(request);
+        var result = "test";
+        //await _mediator.Send(request);
 
-        return Ok();
+        return Ok(result);
     }
     
 

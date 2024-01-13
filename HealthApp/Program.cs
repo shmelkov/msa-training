@@ -72,6 +72,10 @@ builder.Services.AddMediatR(cfg => {
 
 builder.Services.AddScoped(typeof(IGetEntityByIdQuery), typeof(GetUserByIdQuery));
 
+//builder.Services.AddScoped(typeof(IGetEntityByIdQuery), typeof(BaseGetEntityByIdQuery<TDto>));
+
+
+
 
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 
