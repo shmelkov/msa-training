@@ -37,8 +37,11 @@ string connection = string.Format("Host={0};Port={1};Database={2};Username={3};P
     Environment.GetEnvironmentVariable("POSTGRES_USER"),
     Environment.GetEnvironmentVariable("POSTGRES_PASSWORD"));
 
+//builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(connection));
+// Add services to the container.
 builder.Services.AddDbContext<DatabaseContext>(options =>
-               options.UseNpgsql(connection));
+               options.UseNpgsql(
+                    builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 //builder.Configuration.AddEnvironmentVariables(connection);
@@ -70,14 +73,14 @@ builder.Services.AddMediatR(cfg => {
 
 
 
-builder.Services.AddScoped(typeof(IGetEntityByIdQuery), typeof(GetUserByIdQuery));
+//builder.Services.AddScoped(typeof(IGetEntityByIdQuery), typeof(GetUserByIdQuery));
 
 //builder.Services.AddScoped(typeof(IGetEntityByIdQuery), typeof(BaseGetEntityByIdQuery<TDto>));
 
 
 
 
-builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+//builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 
 //builder.Services.AddSingleton<UserController>();
 

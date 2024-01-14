@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj": {}
+    "C:\\msa-training\\HealthApp\\HealthApp.csproj": {}
   },
   "projects": {
-    "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj": {
+    "C:\\msa-training\\HealthApp\\HealthApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj",
+        "projectUniqueName": "C:\\msa-training\\HealthApp\\HealthApp.csproj",
         "projectName": "HealthApp",
-        "projectPath": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj",
-        "packagesPath": "/Users/eshmelkov/.nuget/packages/",
-        "outputPath": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/obj/",
+        "projectPath": "C:\\msa-training\\HealthApp\\HealthApp.csproj",
+        "packagesPath": "C:\\Users\\a426243\\.nuget\\packages\\",
+        "outputPath": "C:\\msa-training\\HealthApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/eshmelkov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\a426243\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,6 +56,10 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.11, )"
@@ -62,6 +67,10 @@
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.4, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -91,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
