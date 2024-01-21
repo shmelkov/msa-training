@@ -1,0 +1,44 @@
+version: '3.4'
+
+volumes:
+  postgres_data:
+      driver: local
+  pgadmin-data:
+  # minio-storage:
+  # rabbitmq-storage:
+  # opensearch-data:
+
+services:
+  portal:
+    image: ${DOCKER_REGISTRY-}portal
+    build:
+      context: .
+      dockerfile: Portal/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16.1
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: keycloak
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready"]
+        interval: 5s
+        timeout: 2s
+        retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
