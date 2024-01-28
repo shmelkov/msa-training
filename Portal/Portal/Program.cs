@@ -12,7 +12,7 @@ using FluentValidation;
 using MassTransit;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
-using Portal.Common.Behaviors;
+//using Portal.Common.Behaviors;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,8 +23,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMediatR((c) =>
 {
     c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-    c.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-    c.AddBehavior(typeof(IPipelineBehavior<,>), typeof(PaginationBehavior<,>));
+    //c.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+    //c.AddBehavior(typeof(IPipelineBehavior<,>), typeof(PaginationBehavior<,>));
 });
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());

@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Dev\TFS\AuxoIntranetPortal\Backend\Portal.Common\Portal.Common.csproj" />
+    <ProjectReference Include="..\..\Portal.Common\Portal.Common.csproj" />
   </ItemGroup>
 
 </Project>
