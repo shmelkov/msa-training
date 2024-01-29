@@ -27,10 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Application\CQRS\News\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Portal.Common\Portal.Common.csproj" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>
