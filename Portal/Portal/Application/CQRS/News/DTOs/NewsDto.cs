@@ -1,4 +1,4 @@
-﻿namespace Portal.Application.CQRS.News.DTOs
+namespace Portal.Application.CQRS.News.DTOs
 {
     public class NewsDto
     {
