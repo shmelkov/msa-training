@@ -61,7 +61,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Ensures DB is created against container
-app.EnsureDatabaseCreated<NewsContext>();
+try
+{
+    // Ensures DB is created against container
+    app.EnsureDatabaseCreated<NewsContext>();
+}
+catch (Exception ex)
+{ 
+}
 
 app.Run();
