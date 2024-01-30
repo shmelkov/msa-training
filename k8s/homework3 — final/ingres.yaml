@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuber-ingress
+spec:
+  ingressClassName: nginx
+  #tls:
+  #- hosts:
+  #  - arch.homework
+  rules:
+  - host: arch.homework
+    http:
+      paths:
+      - path: /health
+        pathType: Prefix
+        backend:
+          service:
+            name: kuber-service
+            port:
+              number: 80
+  - host: arch.homework
+    http:
+      paths:
+      - path: /news
+        pathType: Prefix
+        backend:
+          service:
+            name: kuber-service
+            port:
+              number: 80
+  - host: arch.homework
+    http:
+      paths:
+      - path: /weatherforecast
+        pathType: Prefix
+        backend:
+          service:
+            name: kuber-service
+            port:
+              number: 80           
