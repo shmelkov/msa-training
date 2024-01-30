@@ -18,9 +18,11 @@ spec:
     spec:
       containers:
       - name: kuber-app
-        image: eshmelkov/otus_microservice:healthapp
+        image: eshmelkov/portal-news:latest
+        #image: eshmelkov/otus_microservice:healthapp
         ports:
         - containerPort: 8000
+        #- containerPort: 80
         envFrom:
             - configMapRef:
                 name: postgres-configmap

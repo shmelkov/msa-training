@@ -1,27 +1,22 @@
 ﻿<Properties StartupConfiguration="{C445018B-D378-4C5A-AF7F-267415064A6F}|Default">
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Portal/Application/CQRS/News/DTOs/NewsDto.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Portal/Dockerfile">
     <Files>
       <File FileName="../../../../../../../usr/local/share/dotnet/sdk/7.0.311/Microsoft.Common.CurrentVersion.targets" />
       <File FileName="Portal/Application/CQRS/News/Queries/GetNewsByIdQuery.cs" />
       <File FileName="Portal/Application/CQRS/News/DTOs/NewsDto.cs" Line="1" Column="1" />
+      <File FileName="../k8s/homework3/ingres.yaml" Line="1" Column="1" />
+      <File FileName="Portal/Program.cs" Line="59" Column="1" />
+      <File FileName="Portal/Controllers/WeatherForecastController.cs" Line="38" Column="21" />
+      <File FileName="Portal/Controllers/NewsController.cs" Line="1" Column="1" />
+      <File FileName="Portal/Dockerfile" Line="13" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Portal">
-            <Node name="Portal" expanded="True">
-              <Node name="Application" expanded="True">
-                <Node name="CQRS" expanded="True">
-                  <Node name="News" expanded="True">
-                    <Node name="DTOs" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
+            <Node name="Portal">
+              <Node name="Dockerfile" selected="True" />
             </Node>
           </Node>
         </State>
@@ -29,6 +24,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Portal PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Portal PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

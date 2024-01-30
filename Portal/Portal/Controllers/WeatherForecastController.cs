@@ -29,5 +29,21 @@ namespace Portal.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet(Name = "GetEnvironments")]
+        public string GetEnvironments()
+        {
+            return
+                string.Format(
+                    "POSTGRES_HOST={0}; " +
+                    "POSTGRES_PORT={1}; " +
+                    "POSTGRES_USER={2}; " +
+                    "POSTGRES_PASSWORD={3};",
+                Environment.GetEnvironmentVariable("POSTGRES_HOST"),
+                Environment.GetEnvironmentVariable("POSTGRES_PORT"),
+                Environment.GetEnvironmentVariable("POSTGRES_USER"),
+                Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")
+                );
+        }
     }
 }
