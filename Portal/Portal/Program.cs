@@ -33,9 +33,19 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddControllers();
 
 #region Add database context
+var defaultConnection = string.Format("Host={0};Port={1};Database=News;Username={2};Password={3}",
+    Environment.GetEnvironmentVariable("POSTGRES_HOST"),
+    Environment.GetEnvironmentVariable("POSTGRES_PORT"),
+    Environment.GetEnvironmentVariable("POSTGRES_USER"),
+    Environment.GetEnvironmentVariable("POSTGRES_PASSWORD"));
+
+builder.Services.AddDbContext<NewsContext>(options =>
+               options.UseNpgsql(defaultConnection));
+/*
 builder.Services.AddDbContext<NewsContext>(options =>
                options.UseNpgsql(
                     builder.Configuration.GetConnectionString("DefaultConnection")));
+*/
 
 builder.Services.AddScoped<INewsDbContext, NewsContext>();
 builder.Services.AddScoped<INewsRepository, NewsRepository>();
