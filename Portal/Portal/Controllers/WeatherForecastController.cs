@@ -30,20 +30,16 @@ namespace Portal.Controllers
             .ToArray();
         }
 
-        [HttpGet(Name = "GetEnvironments")]
-        public string GetEnvironments()
+        [HttpGet("/environment")]
+        public EnvironmentConfig GetEnvironmentConfig()
         {
-            return
-                string.Format(
-                    "POSTGRES_HOST={0}; " +
-                    "POSTGRES_PORT={1}; " +
-                    "POSTGRES_USER={2}; " +
-                    "POSTGRES_PASSWORD={3};",
-                Environment.GetEnvironmentVariable("POSTGRES_HOST"),
-                Environment.GetEnvironmentVariable("POSTGRES_PORT"),
-                Environment.GetEnvironmentVariable("POSTGRES_USER"),
-                Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")
-                );
+            return new EnvironmentConfig()
+            {
+                POSTGRES_HOST = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("POSTGRES_HOST")) ? Environment.GetEnvironmentVariable("POSTGRES_HOST") : "undefined",
+                POSTGRES_PORT = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("POSTGRES_PORT")) ? Environment.GetEnvironmentVariable("POSTGRES_PORT") : "undefined",
+                POSTGRES_USER = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("POSTGRES_USER")) ? Environment.GetEnvironmentVariable("POSTGRES_USER") : "undefined",
+                POSTGRES_PASSWORD = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")) ? Environment.GetEnvironmentVariable("POSTGRES_PASSWORD") : "undefined",
+            };
         }
     }
 }
