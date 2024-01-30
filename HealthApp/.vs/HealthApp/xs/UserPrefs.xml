@@ -2,21 +2,51 @@
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.HealthApp PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
     <Files>
-      <File FileName="Program.cs" Line="48" Column="45" />
-      <File FileName="Controllers/UserController.cs" Line="10" Column="39" />
+      <File FileName="Program.cs" Line="50" Column="1" IsPinned="True" />
+      <File FileName="Application/Queries/GetUserByIdQuery.cs" Line="28" Column="73" />
+      <File FileName="Controllers/HealthController.cs" Line="4" Column="1" />
+      <File FileName="Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="Core/Repositories/IUserRepository.cs" Line="6" Column="47" />
+      <File FileName="Infrastructure/Repostitories/UserRepository.cs" Line="15" Column="41" />
+      <File FileName="Core/Repositories/Base/IRepository.cs" Line="9" Column="22" />
+      <File FileName="Infrastructure/DatabaseContext.cs" Line="23" Column="46" />
+      <File FileName="WeatherForecast.cs" Line="1" Column="1" />
+      <File FileName="Application/DTOs/UserDto.cs" Line="3" Column="25" />
+      <File FileName="Infrastructure/DataSeed.cs" Line="8" Column="28" />
+      <File FileName="Controllers/UserController.cs" Line="44" Column="31" />
+      <File FileName="Core/IDbContext.cs" Line="1" Column="1" />
+      <File FileName="Core/IUserDbContext.cs" Line="5" Column="25" />
+      <File FileName="Infrastructure/Repostitories/Base/BaseRepository.cs" Line="11" Column="18" />
+      <File FileName="Core/Entities/User.cs" Line="1" Column="1" />
+      <File FileName="Core/Entities/BaseEntity.cs" Line="9" Column="5" />
+      <File FileName="appsettings.json" Line="12" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HealthApp">
             <Node name="HealthApp">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Application">
+                <Node name="Commands" expanded="True" />
+                <Node name="DTOs" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Program.cs" selected="True" />
+              <Node name="Core">
+                <Node name="Repositories" expanded="True">
+                  <Node name="Base" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Infrastructure">
+                <Node name="Repostitories">
+                  <Node name="Base" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties">
+                <Node name="PublishProfiles" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
@@ -25,7 +55,16 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Application/Queries/BaseGetEntityByIdQuery.cs" relfile="Application/Queries/BaseGetEntityByIdQuery.cs" line="49" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Application/Queries/BaseGetEntityByIdQuery.cs" relfile="Application/Queries/BaseGetEntityByIdQuery.cs" line="36" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Application/Queries/GetUserByIdQuery.cs" relfile="Application/Queries/GetUserByIdQuery.cs" line="12" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="17" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Controllers/HealthController.cs" relfile="Controllers/HealthController.cs" line="21" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Controllers/HealthController.cs" relfile="Controllers/HealthController.cs" line="15" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Controllers/HealthController.cs" relfile="Controllers/HealthController.cs" line="11" column="1" />
+      <Breakpoint file="/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="43" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

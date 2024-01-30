@@ -23,9 +23,7 @@ using HealthApp.Application.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
-builder.Services.AddControllers();
 
 //builder.Configuration.Add(ConnectionInfo)
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -44,11 +42,16 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
                     builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+
 //builder.Configuration.AddEnvironmentVariables(connection);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add services to the container.
+
+builder.Services.AddControllers();
 
 //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Application).GetTypeInfo().Assembly));
 //builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies([typeof(Program).Assembly, typeof(xxxxxx).Assembly]); });

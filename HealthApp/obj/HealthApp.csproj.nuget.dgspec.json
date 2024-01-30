@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\msa-training\\HealthApp\\HealthApp.csproj": {}
+    "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj": {}
   },
   "projects": {
-    "C:\\msa-training\\HealthApp\\HealthApp.csproj": {
+    "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\msa-training\\HealthApp\\HealthApp.csproj",
+        "projectUniqueName": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj",
         "projectName": "HealthApp",
-        "projectPath": "C:\\msa-training\\HealthApp\\HealthApp.csproj",
-        "packagesPath": "C:\\Users\\a426243\\.nuget\\packages\\",
-        "outputPath": "C:\\msa-training\\HealthApp\\obj\\",
+        "projectPath": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/HealthApp.csproj",
+        "packagesPath": "/Users/eshmelkov/.nuget/packages/",
+        "outputPath": "/Users/eshmelkov/Documents/Dev/GitHub/msa-training/HealthApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a426243\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/eshmelkov/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
         }
       }
     }

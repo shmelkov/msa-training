@@ -12,8 +12,8 @@ namespace HealthApp.Application.Queries
     {
         private readonly DatabaseContext _dbContext;
 
-        public GetUserByIdQuery() { 
-            
+        public GetUserByIdQuery(DatabaseContext databaseContext) {
+            _dbContext = databaseContext;
         }
 
         /*
@@ -27,6 +27,8 @@ namespace HealthApp.Application.Queries
         {
             return _dbContext.Users.FirstOrDefaultAsync(i => i.Id == Id);
         }
+
+        
 
 
     }
