@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-dp
+  labels:
+    app: kuber-dp
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+      labels:
+        env: prod
+    spec:
+      containers:
+      - name: kuber-app
+        image: eshmelkov/portal-news:latest
+        #image: eshmelkov/otus_microservice:healthapp
+        ports:
+        - containerPort: 8000
+        #- containerPort: 80
+        envFrom:
+            - configMapRef:
+                name: postgres-configmap
+        env:
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: database-secret
+                key: POSTGRES_USER
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: database-secret
+                key: POSTGRES_PASSWORD        
+          - name: POSTGRES_HOST
+            valueFrom:
+              secretKeyRef:
+                name: database-secret
+                key: POSTGRES_HOST
+          - name: POSTGRES_PORT
+            valueFrom:
+              secretKeyRef:
+                name: database-secret
+                key: POSTGRES_PORT
