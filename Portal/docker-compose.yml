@@ -7,10 +7,13 @@ volumes:
   # minio-storage:
   # rabbitmq-storage:
   # opensearch-data:
+  prometheus_data: {}
+  grafana_data: {}
 
 services:
   portal:
     image: ${DOCKER_REGISTRY-}portal
+    container_name: portal
     build:
       context: .
       dockerfile: Portal/Dockerfile
@@ -42,3 +45,35 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+    - 9090:9090
+    volumes:
+    #  - ./prometheus/:/etc/prometheus/
+      - './portal/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml'
+      - prometheus_data:/prometheus
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    #volumes:
+    #- ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  grafana:
+    image: grafana/grafana
+    user: root
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    container_name: grafana
+    hostname: grafana
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Moscow"
+    networks:
+      - default

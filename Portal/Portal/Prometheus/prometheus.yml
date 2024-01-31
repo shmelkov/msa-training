@@ -1,0 +1,27 @@
+global:
+  scrape_interval: 1m
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'mircoservices'
+    scheme: https
+    #authorization:
+    #  type: Bearer
+    #  credentials: <your_token>
+    tls_config:
+      insecure_skip_verify: true
+    metrics_path: /metrics
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:63406']
+  # docker.for.mac.localhost for mac OR host.docker.internal for windows
+
+remote_write:
+  - url: '<Your Prometheus remote_write endpoint>'
+    basic_auth:
+      username: '<Your Grafana Username>'
+      password: '<Your Grafana API key>'

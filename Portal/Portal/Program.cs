@@ -13,6 +13,7 @@ using MassTransit;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 //using Portal.Common.Behaviors;
+using Prometheus;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -67,7 +68,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//Adding Prometheus to collect mehtrics
+app.UseHttpMetrics();
+
 app.UseAuthorization();
+
+//Adding for Prometheus
+app.MapMetrics();
 
 app.MapControllers();
 
