@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "healthapp": "StartDebugging",
+        "pgadmin": "StartDebugging",
+        "postgres": "StartDebugging"
+      }
+    }
+  }
+}
