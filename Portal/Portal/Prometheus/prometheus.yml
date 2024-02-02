@@ -17,7 +17,7 @@ scrape_configs:
     metrics_path: /metrics
     scrape_interval: 5s
     static_configs:
-      - targets: ['host.docker.internal:63406']
+      - targets: ['host.docker.internal:58927']
   # docker.for.mac.localhost for mac OR host.docker.internal for windows
 
 remote_write:

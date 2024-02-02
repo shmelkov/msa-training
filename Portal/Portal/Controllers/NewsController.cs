@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Portal.Core.Repositories;
 using Portal.Application.CQRS.News.Queries;
+using System.Net;
+using System.Web.Http.Results;
+//using Microsoft.AspNetCore.Mvc;
 
 namespace Portal.Controllers
 {
@@ -30,6 +33,43 @@ namespace Portal.Controllers
             var result = await _mediator.Send(new GetNewsByIdQuery() { Id = id });
 
             return Ok(result);
+        }
+
+        [HttpGet("/GenerateRandomErrors")]
+        public async Task<IActionResult> GenerateRandomErrors()
+        {
+            Random rnd = new Random();
+            int a = rnd.Next(1, 10);
+
+            return (a < 5) ?
+                StatusCode(500)
+                //throw new System.Web.Http.HttpResponseException(HttpStatusCode.InternalServerError)
+                :
+                StatusCode(401);
+                //HttpStatusCodeResult((int)HttpStatusCode.InternalServerError);
+                //throw new System.Web.Http.HttpResponseException(HttpStatusCode.Unauthorized);  
+
+        }
+
+        [HttpGet("/GenerateCustomErrors")]
+        public async Task<IActionResult> GenerateCustomErrors()
+        {
+            Random rnd = new Random();
+            int a = rnd.Next(1, 10);
+
+            return (a < 5) ?
+                throw new System.Web.Http.HttpResponseException(HttpStatusCode.Forbidden)
+                : throw new System.Web.Http.HttpResponseException(HttpStatusCode.GatewayTimeout);
+
+        }
+
+        [HttpGet("/GenerateLongResponse")]
+        public async Task<IActionResult> GenerateLongResponse()
+        {
+            Random rnd = new Random();
+            int a = rnd.Next(300, 10000);
+            Thread.Sleep(a);
+            return Ok(string.Format("sleep for {0} ms",a));
         }
 
         //[HttpGet]

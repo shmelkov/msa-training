@@ -17,6 +17,8 @@ services:
     build:
       context: .
       dockerfile: Portal/Dockerfile
+    ports:
+    - 58768:80
     depends_on:
       postgres:
         condition: service_healthy

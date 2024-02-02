@@ -5,7 +5,8 @@
       "commandVersion": "1.0",
       "serviceActions": {
         "portal": "StartDebugging"
-      }
+      },
+      "applicationUrl": "http://localhost:58768"
     }
   }
 }

@@ -4,8 +4,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 #EXPOSE 443
+EXPOSE 58768
 
-ENV ASPNETCORE_URLS=http://+:80
+ENV ASPNETCORE_URLS=http://+:58768;http://+:80
 
 #test data that to test environment config
 ENV POSTGRES_HOST=postgres
