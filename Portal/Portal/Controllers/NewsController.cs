@@ -67,7 +67,7 @@ namespace Portal.Controllers
         public async Task<IActionResult> GenerateLongResponse()
         {
             Random rnd = new Random();
-            int a = rnd.Next(300, 10000);
+            int a = rnd.Next(10000, 20000);
             Thread.Sleep(a);
             return Ok(string.Format("sleep for {0} ms",a));
         }
