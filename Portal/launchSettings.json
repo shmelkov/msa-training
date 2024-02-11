@@ -3,10 +3,18 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "appgateway",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
       "serviceActions": {
-        "portal": "StartDebugging"
-      },
-      "applicationUrl": "http://localhost:58768"
+        "portal": "StartDebugging",
+        "appgateway": "StartDebugging",
+        "grafana": "StartWithoutDebugging",
+        "keycloak": "StartWithoutDebugging",
+        "pgadmin": "StartWithoutDebugging",
+        "postgres": "StartWithoutDebugging",
+        "prometheus": "StartWithoutDebugging"
+      }
     }
   }
 }

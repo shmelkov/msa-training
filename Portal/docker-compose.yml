@@ -14,11 +14,16 @@ services:
   portal:
     image: ${DOCKER_REGISTRY-}portal
     container_name: portal
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+       # - ASPNETCORE_URLS=https://+:443;http://+:80
+      #   - ASPNETCORE_HTTPS_PORT=5009
+    ports:
+      - "3002:80"
+      - "47002:443"
     build:
       context: .
       dockerfile: Portal/Dockerfile
-    ports:
-    - 58768:80
     depends_on:
       postgres:
         condition: service_healthy
@@ -79,3 +84,46 @@ services:
       TZ: "Europe/Moscow"
     networks:
       - default
+
+  keycloak:
+      image: quay.io/keycloak/keycloak:20.0.5
+      command:
+      - start --auto-build --db postgres --hostname-strict-https false --hostname-strict false --proxy edge --http-enabled true --import-realm
+      environment:
+        KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+        KC_DB_USERNAME: postgres
+        KC_DB_PASSWORD: postgres
+        KC_DB_SCHEMA: public
+        KEYCLOAK_ADMIN: admin
+        KEYCLOAK_ADMIN_PASSWORD: admin
+        KC_HEALTH_ENABLED: true
+      volumes:
+        - type: bind
+          source: ../Keycloak/realm-export.json
+          target: /opt/keycloak/data/import/realm-export.json
+          read_only: true
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+        interval: 5s
+        timeout: 2s
+        retries: 15
+      ports:
+        - 8080:8080
+      depends_on:
+        - postgres
+
+  appgateway:
+      image: ${DOCKER_REGISTRY-}appgateway
+      build:
+        context: .
+        dockerfile: ../AppGateway/Dockerfile
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+       # - ASPNETCORE_URLS=https://+:443;http://+:80
+      #   - ASPNETCORE_HTTPS_PORT=5009
+      ports:
+        - "3001:80"
+        - "47001:443"
+      depends_on:
+        keycloak:
+          condition: service_healthy

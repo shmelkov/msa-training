@@ -1,0 +1,34 @@
+{
+  "Routes": [
+    // portal (news)
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "portal",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/_api/news/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
+      "SwaggerKey": "news",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      }
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "portal",
+      "Config": [
+        {
+          "Name": "Portal",
+          "Version": "1.0",
+          "Url": "http://portal/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
