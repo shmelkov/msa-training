@@ -99,7 +99,7 @@ services:
         KC_HEALTH_ENABLED: true
       volumes:
         - type: bind
-          source: ../Keycloak/realm-export.json
+          source: ./portal/Keycloak/realm-export.json
           target: /opt/keycloak/data/import/realm-export.json
           read_only: true
       healthcheck:

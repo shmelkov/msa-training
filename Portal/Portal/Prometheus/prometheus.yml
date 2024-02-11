@@ -3,12 +3,28 @@ global:
 
 scrape_configs:
   - job_name: 'prometheus'
+    scheme: http
+    tls_config:
+      insecure_skip_verify: true
     scrape_interval: 1m
     static_configs:
       - targets: ['localhost:9090']
 
-  - job_name: 'mircoservices'
-    scheme: https
+  # - job_name: 'mircoservice api gateway'
+  #   scheme: https
+  #   #authorization:
+  #   #  type: Bearer
+  #   #  credentials: <your_token>
+  #   tls_config:
+  #     insecure_skip_verify: true
+  #   metrics_path: /metrics
+  #   scrape_interval: 5s
+  #   static_configs:
+  #     - targets: ['host.docker.internal:51510']
+  # # docker.for.mac.localhost for mac OR host.docker.internal for windows
+
+  - job_name: 'mircoservice api gateway'
+    scheme: http
     #authorization:
     #  type: Bearer
     #  credentials: <your_token>
@@ -17,7 +33,20 @@ scrape_configs:
     metrics_path: /metrics
     scrape_interval: 5s
     static_configs:
-      - targets: ['host.docker.internal:51510']
+      - targets: ['host.docker.internal:3001']
+  # docker.for.mac.localhost for mac OR host.docker.internal for windows
+
+  - job_name: 'mircoservice portal (news)'
+    scheme: http
+    #authorization:
+    #  type: Bearer
+    #  credentials: <your_token>
+    tls_config:
+      insecure_skip_verify: true
+    metrics_path: /metrics
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:3002']
   # docker.for.mac.localhost for mac OR host.docker.internal for windows
 
 remote_write:

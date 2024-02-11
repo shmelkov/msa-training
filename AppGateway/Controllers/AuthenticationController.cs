@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portal.Gateway.Controllers
+namespace AppGateway.Controllers
 {
     [ApiController]
     [Route("[controller]")]
