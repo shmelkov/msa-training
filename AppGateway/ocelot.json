@@ -1,5 +1,26 @@
 {
   "Routes": [
+    //portal-gateway
+    {
+      "DownstreamPathTemplate": "/users/{userName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "users",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/authentication/user",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "gateway",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "ChangeDownstreamPathTemplate": {
+        "userName": "Claims[preferred_username] > value"
+      }
+    },
     // portal (news)
     {
       "DownstreamPathTemplate": "/{everything}",
@@ -12,7 +33,25 @@
       ],
       "UpstreamPathTemplate": "/_api/news/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
-      "SwaggerKey": "news",
+      "SwaggerKey": "portal",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      }
+    },
+    // users
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "users",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/_api/users/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
+      "SwaggerKey": "users",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Cookies",
         "AllowedScopes": []
@@ -27,6 +66,16 @@
           "Name": "Portal",
           "Version": "1.0",
           "Url": "http://portal/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "users",
+      "Config": [
+        {
+          "Name": "Users",
+          "Version": "1.0",
+          "Url": "http://users/swagger/v1/swagger.json"
         }
       ]
     }

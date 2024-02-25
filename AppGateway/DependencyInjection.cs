@@ -11,7 +11,7 @@ namespace AppGateway
             builder.Services.AddTransient<AuthHelper>();
 
             builder.Services.AddRefitClient<IUserServiceApi>()
-                .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://portal-users-api"));
+                .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://users"));
         }
     }
 }

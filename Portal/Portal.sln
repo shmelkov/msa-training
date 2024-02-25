@@ -7,12 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal", "Portal\Portal.csp
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C445018B-D378-4C5A-AF7F-267415064A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppGateway", "..\AppGateway\AppGateway.csproj", "{D4585329-46A3-47C4-808E-6B8DFF2A4761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppGateway", "..\AppGateway\AppGateway.csproj", "{D4585329-46A3-47C4-808E-6B8DFF2A4761}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keycloak", "Keycloak", "{3250C40D-5F9E-4761-A557-1F19A91BDB4E}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\Users\a426243\Downloads\realm-export.json = ..\..\Users\a426243\Downloads\realm-export.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users", "..\Users\Users.csproj", "{98850BF1-FEFD-46D5-A307-5214FAE5779C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{D4585329-46A3-47C4-808E-6B8DFF2A4761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4585329-46A3-47C4-808E-6B8DFF2A4761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4585329-46A3-47C4-808E-6B8DFF2A4761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98850BF1-FEFD-46D5-A307-5214FAE5779C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98850BF1-FEFD-46D5-A307-5214FAE5779C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98850BF1-FEFD-46D5-A307-5214FAE5779C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98850BF1-FEFD-46D5-A307-5214FAE5779C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

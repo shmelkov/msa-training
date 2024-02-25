@@ -127,3 +127,19 @@ services:
       depends_on:
         keycloak:
           condition: service_healthy
+
+  users:
+    image: ${DOCKER_REGISTRY-}users
+    container_name: users
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    # ports:
+    #   - "3003:80"
+    #   - "47003:443"
+    build:
+      context: .
+      dockerfile: ../Users/Dockerfile
+    depends_on:
+      - postgres
+      - portal
+      - appgateway

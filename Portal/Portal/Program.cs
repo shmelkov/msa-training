@@ -67,7 +67,7 @@ if (app.Environment.IsDevelopment())
     //builder.WebHost.UseUrls("http://localhost:58768");
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 //Adding Prometheus to collect mehtrics
 app.UseHttpMetrics();

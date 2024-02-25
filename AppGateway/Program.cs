@@ -13,8 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 IdentityModelEventSource.ShowPII = true;
 
-//var openIdOptions = builder.Configuration.GetSection(nameof(OpendIdOptions)).Get<OpendIdOptions>();
-var openIdOptions = new OpendIdOptions() { };
+var openIdOptions = builder.Configuration.GetSection(nameof(OpendIdOptions)).Get<OpendIdOptions>();
+//var openIdOptions = new OpendIdOptions() { };
 
 builder.Services.AddAuthentication(options =>
 {
@@ -50,12 +50,12 @@ builder.Services.AddAuthentication(options =>
 
             authHelper.AddTokenToCookies(context.Response, token);
         },
-        OnTokenValidated = async context =>
-        {
-            var claimsIdentity = (ClaimsIdentity)context.Principal.Identity;
-            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            claimsIdentity.AddClaim(new Claim("userId", userId));
-        },
+        //OnTokenValidated = async context =>
+        //{
+        //    var claimsIdentity = (ClaimsIdentity)context.Principal.Identity;
+        //    var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        //    claimsIdentity.AddClaim(new Claim("userId", userId));
+        //},
         OnSignedOutCallbackRedirect = async context =>
         {
             context.HttpContext.Response.Cookies.Delete(AuthOptions.Cookie.Name);
@@ -111,8 +111,9 @@ if (app.Environment.IsDevelopment())
 //Adding Prometheus to collect mehtrics
 app.UseHttpMetrics();
 
-//app.UseMiddleware<JwtTokenFromCookieMiddleware>();
-//app.UseMiddleware<SetCorrelationIdMiddleware>();
+app.UseMiddleware<JwtTokenFromCookieMiddleware>();
+
+app.UseMiddleware<SetCorrelationIdMiddleware>();
 
 app.UseRouting();
 
